@@ -59,16 +59,12 @@ body{font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
   padding:10px 14px;border-radius:8px;margin:8px 0;font-size:14px}
 .warn{background:var(--warn);border-left:4px solid var(--hard);
   padding:10px 14px;border-radius:8px;margin:8px 0;font-size:14px}
-.step{padding:6px 0;border-bottom:1px dashed var(--line)}
-.step:last-child{border-bottom:none}
 .toggle-btn{background:var(--brand);color:#fff;border:none;padding:8px 16px;
   border-radius:8px;cursor:pointer;font-size:14px;margin-top:8px}
 .toggle-btn:hover{background:var(--brand2)}
 .answer{margin-top:10px;padding:12px;background:#f9fafb;border-radius:8px;
   border:1px solid var(--line)}
 .mistake{color:#b91c1c}
-.ocr-note{background:#fff7ed;border-left:4px solid #f97316;
-  padding:10px 14px;border-radius:8px;margin:8px 0;font-size:14px}
 .quiz-head{margin-bottom:6px}
 .quiz-q{font-size:16px;font-weight:600;margin:6px 0}
 .progress-wrap{background:var(--line);border-radius:20px;height:14px;overflow:hidden;margin:8px 0}
@@ -116,13 +112,11 @@ th{background:var(--tip);color:var(--brand)}
 </div>
 
 <script>
-/* ============ 筆記 NOTES ============ */
 const NOTES = `
 <div class="card">
   <h2>📖 1.1 因式分解 — 核心概念</h2>
   <p class="muted">F.3 Chapter 1: More about Factorization of Polynomials</p>
 </div>
-
 <div class="card">
   <h3>一、核心術語定義</h3>
   <table>
@@ -133,7 +127,6 @@ const NOTES = `
     <tr><td>Identities</td><td>恆等式</td><td>用於因式分解的代數關係式（平方差、完全平方）。</td></tr>
   </table>
 </div>
-
 <div class="card">
   <h3>二、所有公式 / 法則</h3>
   <table>
@@ -145,521 +138,233 @@ const NOTES = `
     <tr><td>完全平方(差)</td><td>$a^2-2ab+b^2=(a-b)^2$</td><td>三項，首尾為正完全平方，中間 $-2ab$。</td></tr>
   </table>
 </div>
-
 <div class="card">
   <h3>三、公式分類</h3>
   <h4>基本方法 (Basic Methods)</h4>
-  <p>• <b>提出公因式</b>：所有情況嘅第一步檢查。<br>
-     • <b>併項法</b>：專門針對 4 項或 6 項嘅長多項式。</p>
+  <p>• <b>提出公因式</b>：所有情況嘅第一步檢查。<br>• <b>併項法</b>：專門針對 4 項或 6 項嘅長多項式。</p>
   <h4>恆等式 (Using Identities)</h4>
-  <p>• <b>平方差</b>：針對二項式。<br>
-     • <b>完全平方</b>：針對特定嘅三項式。</p>
+  <p>• <b>平方差</b>：針對二項式。<br>• <b>完全平方</b>：針對特定嘅三項式。</p>
 </div>
-
 <div class="card">
   <h3>四、Common Mistakes（常見錯誤）</h3>
-  <div class="warn"><b>1. 未完成最終分解：</b>提出括號公因式後，忘記括號內仍有數字公因數。例如算到 $(4a-3b)(2a+4b)$ 就停，正確應為 $2(4a-3b)(a+2b)$。做完習慣性再掃一次每個括號。</div>
-  <div class="warn"><b>2. 平方差展開忘記變號：</b>$A^2-(B-C)^2$ 錯寫成 $(A+B-C)(A-B-C)$。減去括號時要變號 $[A-(B-C)]=A-B+C$，強迫自己多寫一步中括號。</div>
-  <div class="warn"><b>3. 不驗算答案：</b>應通過展開 (Expansion) 檢查是否還原原式。</div>
+  <div class="warn"><b>1. 未完成最終分解：</b>提出括號公因式後，忘記括號內仍有數字公因數。例如算到 $(4a-3b)(2a+4b)$ 就停，正確應為 $2(4a-3b)(a+2b)$。</div>
+  <div class="warn"><b>2. 平方差展開忘記變號：</b>$A^2-(B-C)^2$ 錯寫成 $(A+B-C)(A-B-C)$。減去括號時要變號 $[A-(B-C)]=A-B+C$。</div>
+  <div class="warn"><b>3. 不驗算答案：</b>應通過展開檢查是否還原原式。</div>
 </div>
-
 <div class="card">
   <h3>五、DSE 出題方式</h3>
   <p>• <b>Paper 1（長題目）：</b>幾乎每年必考 Section A(1) 頭幾題（如 2017 Q3、2018 Q3、2019 Q4）。通常分 (a)(b)：(a) 基礎平方差或完全平方；(b) 利用 (a) 結果再併項法分解更長多項式。</p>
   <p>• <b>Paper 2（MC）：</b>偶爾出現，考基礎因子辨識。</p>
   <p>• <b>常結合章節：</b>指數定律、代數分式化簡、解二次方程。</p>
-  <p>• <b>難度：</b>極低至中等 (Level 1) 嘅必拿分題。若唔能夠喺 2 分鐘內準確完成，會影響摘星 (5**) 機率。</p>
+  <p>• <b>難度：</b>極低至中等 (Level 1) 嘅必拿分題。</p>
 </div>
-
 <div class="card">
   <h3>六、易混淆概念</h3>
-  <div class="tip"><b>Expansion 展開 vs Factorization 因式分解：</b>「Factorization is the reverse process of expansion」。展開係消除括號 $2x(x+3)\\to 2x^2+6x$；因式分解係包裝返 $2x^2+6x\\to 2x(x+3)$。</div>
-  <div class="tip"><b>平方差 vs 完全平方：</b>平方差 $a^2-b^2$ 只有兩項，中間必為減號；完全平方 $a^2\\pm2ab+b^2$ 有三項，首尾必為正完全平方。</div>
+  <div class="tip"><b>Expansion vs Factorization：</b>展開係消除括號 $2x(x+3)\\to 2x^2+6x$；因式分解係包裝返 $2x^2+6x\\to 2x(x+3)$。</div>
+  <div class="tip"><b>平方差 vs 完全平方：</b>平方差 $a^2-b^2$ 只有兩項，中間必為減號；完全平方 $a^2\\pm2ab+b^2$ 有三項。</div>
 </div>
 `;
 
-/* ============ 例題 EXAMPLES ============ */
 const EXAMPLES = `
-<div class="card">
-  <h2>📝 課本例題 (Example 1.1–1.7)</h2>
-  <p class="muted">M1/A1 為導師根據運算邏輯標示，非官方 marking scheme。</p>
-</div>
-
-<div class="card">
-  <h3>Example 1.1</h3>
-  <p class="quiz-q">Factorize (a) $4x^2+8x$ (b) $x^3-x^2y+5x^2$</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $4x^2+8x=4x(x+2)$（最大公因式 $4x$）【A1】</p>
-    <p><b>(b)</b> $x^3-x^2y+5x^2=x^2(x-y+5)$（最大公因式 $x^2$）【A1】</p>
-    <p class="tip">最省時：直接寫出第 2 步。</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Example 1.2</h3>
-  <p class="quiz-q">Factorize (a) $k(x-1)+2(x-1)$ (b) $(4a-3b)(6a+b)-(4a-3b)^2$</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=(x-1)(k+2)$【A1】</p>
-    <p><b>(b)</b> $=(4a-3b)[(6a+b)-(4a-3b)]$【M1】$=(4a-3b)(2a+4b)=2(4a-3b)(a+2b)$【A1】</p>
-    <p class="warn">必須確保最後一步完全分解（抽出 2），學生極易忽略！</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Example 1.3</h3>
-  <p class="quiz-q">Factorize (a) $4m-4n+km-kn$ (b) $3pr-8qs-4qr+6ps$</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=4(m-n)+k(m-n)$【M1】$=(m-n)(4+k)$【A1】</p>
-    <p><b>(b)</b> 重排 $=3pr-4qr+6ps-8qs=r(3p-4q)+2s(3p-4q)$【M1】$=(3p-4q)(r+2s)$【A1】</p>
-    <p class="tip">必須先重排，否則無法分組。</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Example 1.4</h3>
-  <p class="quiz-q">Factorize $1-2x-3y+y^2-2xy^2-3y^3$</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
-  <div class="answer" style="display:none">
-    <p><b>方法 2（三項一組，推薦）</b>：$=(1-2x-3y)+y^2(1-2x-3y)$【M1】$=(1-2x-3y)(1+y^2)$【A1】</p>
-    <p class="tip">強烈建議用方法 2：只需將多項式一分為二，比方法 1 更直觀省時。</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Example 1.5</h3>
-  <p class="quiz-q">Factorize (a) $16m^2-25n^2$ (b) $-3m^2+12$</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=(4m)^2-(5n)^2=(4m+5n)(4m-5n)$【A1】</p>
-    <p><b>(b)</b> $=3(4-m^2)$【M1】$=3(2+m)(2-m)$【A1】</p>
-    <p class="tip">必須先提公因式。</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Example 1.6</h3>
-  <p class="quiz-q">Factorize (a) $x^2-18x+81$ (b) $-7x^2-28xy-28y^2$</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=x^2-2(x)(9)+9^2=(x-9)^2$【A1】</p>
-    <p><b>(b)</b> $=-7[x^2+4xy+4y^2]$【M1】$=-7(x+2y)^2$【A1】</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Example 1.7</h3>
-  <p class="quiz-q">Factorize (a) $36-(3x-2y)^2$ (b) $(4-k)^2+10(4-k)+25$</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=6^2-(3x-2y)^2=[6+(3x-2y)][6-(3x-2y)]$【M1】$=(6+3x-2y)(6-3x+2y)$【A1】</p>
-    <p><b>(b)</b> $=(4-k)^2+2(4-k)(5)+5^2=[(4-k)+5]^2$【M1】$=(9-k)^2$【A1】</p>
-    <p class="warn">小心處理負號展開！</p>
-  </div>
-</div>
+<div class="card"><h2>📝 課本例題 (Example 1.1–1.7)</h2><p class="muted">M1/A1 為導師標示，非官方 marking scheme。</p></div>
+<div class="card"><h3>Example 1.1</h3><p class="quiz-q">Factorize (a) $4x^2+8x$ (b) $x^3-x^2y+5x^2$</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=4x(x+2)$【A1】</p><p><b>(b)</b> $=x^2(x-y+5)$【A1】</p></div></div>
+<div class="card"><h3>Example 1.2</h3><p class="quiz-q">Factorize (a) $k(x-1)+2(x-1)$ (b) $(4a-3b)(6a+b)-(4a-3b)^2$</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(x-1)(k+2)$【A1】</p><p><b>(b)</b> $=(4a-3b)(2a+4b)=2(4a-3b)(a+2b)$【A1】</p><p class="warn">最後一步必須抽出 2！</p></div></div>
+<div class="card"><h3>Example 1.3</h3><p class="quiz-q">Factorize (a) $4m-4n+km-kn$ (b) $3pr-8qs-4qr+6ps$</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(m-n)(4+k)$【A1】</p><p><b>(b)</b> 重排 $=r(3p-4q)+2s(3p-4q)=(3p-4q)(r+2s)$【A1】</p></div></div>
+<div class="card"><h3>Example 1.4</h3><p class="quiz-q">Factorize $1-2x-3y+y^2-2xy^2-3y^3$</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
+<div class="answer" style="display:none"><p>三項一組（推薦）：$=(1-2x-3y)(1+y^2)$【A1】</p></div></div>
+<div class="card"><h3>Example 1.5</h3><p class="quiz-q">Factorize (a) $16m^2-25n^2$ (b) $-3m^2+12$</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(4m+5n)(4m-5n)$【A1】</p><p><b>(b)</b> $=3(2+m)(2-m)$【A1】</p></div></div>
+<div class="card"><h3>Example 1.6</h3><p class="quiz-q">Factorize (a) $x^2-18x+81$ (b) $-7x^2-28xy-28y^2$</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(x-9)^2$【A1】</p><p><b>(b)</b> $=-7(x+2y)^2$【A1】</p></div></div>
+<div class="card"><h3>Example 1.7</h3><p class="quiz-q">Factorize (a) $36-(3x-2y)^2$ (b) $(4-k)^2+10(4-k)+25$</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示解答</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(6+3x-2y)(6-3x+2y)$【A1】</p><p><b>(b)</b> $=(9-k)^2$【A1】</p></div></div>
 `;
-</script>
-/* ============ 即時練習 PRACTICE ============ */
 const PRACTICE = `
-<div class="card">
-  <h2>✏️ 即時練習 (Practice 1.1–1.7)</h2>
-  <p class="muted">先睇引導提示嘗試，再撳按鈕對答案。</p>
-</div>
-
-<div class="card">
-  <h3>Practice 1.1</h3>
-  <p class="quiz-q">(a) $7r^2-21rs$ (b) $9m^2+6m^2n-15m^3$</p>
-  <p class="tip">💡 先找數字係數同字母嘅最大公因數 (H.C.F.)。</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=7r(r-3s)$</p>
-    <p><b>(b)</b> $=3m^2(3+2n-5m)$</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Practice 1.2</h3>
-  <p class="quiz-q">(a) $3(y+2)-a(y+2)$ (b) $(4m+5n)^2-(m-4n)(4m+5n)$</p>
-  <p class="tip">💡 唔好急住展開！睇下有冇一個括號係完全一樣，當成大變數 $X$ 提出。</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=(y+2)(3-a)$</p>
-    <p><b>(b)</b> $=(4m+5n)[(4m+5n)-(m-4n)]=(4m+5n)(3m+9n)=3(4m+5n)(m+3n)$</p>
-    <p class="warn">(b) 最後一步必須抽出數字 3，否則唔算 complete factorization！</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Practice 1.3</h3>
-  <p class="quiz-q">(a) $hm+5h+km+5k$ (b) $6ac+5bd-15bc-2ad$</p>
-  <p class="tip">💡 四項式通常用併項法。(b) 冇明顯公因式，需唔需要重排？</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=h(m+5)+k(m+5)=(m+5)(h+k)$</p>
-    <p><b>(b)</b> 重排 $=6ac-15bc-2ad+5bd=3c(2a-5b)-d(2a-5b)=(2a-5b)(3c-d)$</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Practice 1.4</h3>
-  <p class="quiz-q">$4m+3mn+2m^2n+4n+3n^2+2mn^2$</p>
-  <p class="tip">💡 總共 6 項。睇下前三項同後三項有冇關聯？</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
-  <div class="answer" style="display:none">
-    <p>$=m(4+3n+2mn)+n(4+3n+2mn)=(4+3n+2mn)(m+n)$</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Practice 1.5</h3>
-  <p class="quiz-q">(a) $49n^2-36m^2$ (b) $-50+2x^2$</p>
-  <p class="tip">💡 係唔係平方差？(b) 負號喺前，可唔可以掉轉或先抽公因式？</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=(7n)^2-(6m)^2=(7n+6m)(7n-6m)$</p>
-    <p><b>(b)</b> $=2x^2-50=2(x^2-25)=2(x+5)(x-5)$</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Practice 1.6</h3>
-  <p class="quiz-q">(a) $a^2+16a+64$ (b) $-18x^2+12xy-2y^2$</p>
-  <p class="tip">💡 三項式！首尾係咪平方？中間符唔符合 $2ab$？(b) 有負號要先抽公因數。</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=(a+8)^2$</p>
-    <p><b>(b)</b> $=-2(9x^2-6xy+y^2)=-2(3x-y)^2$</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Practice 1.7</h3>
-  <p class="quiz-q">(a) $16-(a-5b)^2$ (b) $(x+3)^2-14(x+3)+49$</p>
-  <p class="tip">💡 把括號視為整體 $A$ 或 $B$。(a) 係 $4^2-A^2$？(b) 係 $A^2-2A(7)+7^2$？</p>
-  <button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
-  <div class="answer" style="display:none">
-    <p><b>(a)</b> $=[4+(a-5b)][4-(a-5b)]=(4+a-5b)(4-a+5b)$</p>
-    <p><b>(b)</b> $=[(x+3)-7]^2=(x-4)^2$</p>
-  </div>
-</div>
+<div class="card"><h2>✏️ 即時練習 (Practice 1.1–1.7)</h2><p class="muted">先睇提示嘗試，再撳按鈕對答案。</p></div>
+<div class="card"><h3>Practice 1.1</h3><p class="quiz-q">(a) $7r^2-21rs$ (b) $9m^2+6m^2n-15m^3$</p>
+<p class="tip">💡 先找數字同字母嘅 H.C.F.。</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=7r(r-3s)$</p><p><b>(b)</b> $=3m^2(3+2n-5m)$</p></div></div>
+<div class="card"><h3>Practice 1.2</h3><p class="quiz-q">(a) $3(y+2)-a(y+2)$ (b) $(4m+5n)^2-(m-4n)(4m+5n)$</p>
+<p class="tip">💡 唔好急住展開！睇下有冇相同括號當成大變數提出。</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(y+2)(3-a)$</p><p><b>(b)</b> $=(4m+5n)(3m+9n)=3(4m+5n)(m+3n)$</p><p class="warn">(b) 最後必須抽出 3！</p></div></div>
+<div class="card"><h3>Practice 1.3</h3><p class="quiz-q">(a) $hm+5h+km+5k$ (b) $6ac+5bd-15bc-2ad$</p>
+<p class="tip">💡 四項式用併項法。(b) 需唔需要重排？</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(m+5)(h+k)$</p><p><b>(b)</b> 重排 $=(2a-5b)(3c-d)$</p></div></div>
+<div class="card"><h3>Practice 1.4</h3><p class="quiz-q">$4m+3mn+2m^2n+4n+3n^2+2mn^2$</p>
+<p class="tip">💡 6 項。前三項同後三項有冇關聯？</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
+<div class="answer" style="display:none"><p>$=(4+3n+2mn)(m+n)$</p></div></div>
+<div class="card"><h3>Practice 1.5</h3><p class="quiz-q">(a) $49n^2-36m^2$ (b) $-50+2x^2$</p>
+<p class="tip">💡 係唔係平方差？(b) 可唔可以先抽公因式？</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(7n+6m)(7n-6m)$</p><p><b>(b)</b> $=2(x+5)(x-5)$</p></div></div>
+<div class="card"><h3>Practice 1.6</h3><p class="quiz-q">(a) $a^2+16a+64$ (b) $-18x^2+12xy-2y^2$</p>
+<p class="tip">💡 三項式！首尾係咪平方？(b) 先抽公因數。</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(a+8)^2$</p><p><b>(b)</b> $=-2(3x-y)^2$</p></div></div>
+<div class="card"><h3>Practice 1.7</h3><p class="quiz-q">(a) $16-(a-5b)^2$ (b) $(x+3)^2-14(x+3)+49$</p>
+<p class="tip">💡 把括號視為整體 $A$ 或 $B$。</p>
+<button class="toggle-btn" onclick="tgAns(this)">顯示答案</button>
+<div class="answer" style="display:none"><p><b>(a)</b> $=(4+a-5b)(4-a+5b)$</p><p><b>(b)</b> $=(x-4)^2$</p></div></div>
 `;
 
-/* ============ 公式速查 FORMULA ============ */
 const FORMULA = `
-<div class="card">
-  <h2>📐 公式速查</h2>
-  <p class="muted">因式分解常用方法與恆等式，考試時快速對照。</p>
-</div>
-
-<div class="card">
-  <h3>一、基本方法</h3>
-  <div class="formula-item">
-    <b>1. 提出公因式</b>
-    <p>$ab+ac=a(b+c)$</p>
-    <p class="muted">先搵各項嘅最大公因式 (H.C.F.)，包括數字同字母。永遠係第一步！</p>
-  </div>
-  <div class="formula-item">
-    <b>2. 併項法（分組）</b>
-    <p>$ax+ay+bx+by=(a+b)(x+y)$</p>
-    <p class="muted">4 項或以上，兩兩分組（或六項三三分組）再提公因式。相鄰無公因，必先重排。</p>
-  </div>
-</div>
-
-<div class="card">
-  <h3>二、重要恆等式</h3>
-  <div class="formula-item"><b>平方差</b><p>$a^2-b^2=(a+b)(a-b)$</p></div>
-  <div class="formula-item"><b>完全平方(和)</b><p>$a^2+2ab+b^2=(a+b)^2$</p></div>
-  <div class="formula-item"><b>完全平方(差)</b><p>$a^2-2ab+b^2=(a-b)^2$</p></div>
-</div>
-
-<div class="card">
-  <h3>三、解題口訣</h3>
-  <p class="tip">👉 <b>一提</b>（提公因式）、<b>二套</b>（套恆等式）、<b>三分組</b>（併項法），最後<b>檢查</b>係咪分解到底（括號內仲有冇公因數）。</p>
-  <p class="tip">👉 <b>驗算</b>：展開返個答案，睇下係咪還原原式。</p>
-</div>
+<div class="card"><h2>📐 公式速查</h2><p class="muted">考試時快速對照。</p></div>
+<div class="card"><h3>一、基本方法</h3>
+<div class="formula-item"><b>1. 提出公因式</b><p>$ab+ac=a(b+c)$</p><p class="muted">先搵最大公因式 (H.C.F.)。永遠係第一步！</p></div>
+<div class="formula-item"><b>2. 併項法（分組）</b><p>$ax+ay+bx+by=(a+b)(x+y)$</p><p class="muted">4 項或以上，兩兩分組（或六項三三分組）。相鄰無公因，必先重排。</p></div></div>
+<div class="card"><h3>二、重要恆等式</h3>
+<div class="formula-item"><b>平方差</b><p>$a^2-b^2=(a+b)(a-b)$</p></div>
+<div class="formula-item"><b>完全平方(和)</b><p>$a^2+2ab+b^2=(a+b)^2$</p></div>
+<div class="formula-item"><b>完全平方(差)</b><p>$a^2-2ab+b^2=(a-b)^2$</p></div></div>
+<div class="card"><h3>三、解題口訣</h3>
+<p class="tip">👉 <b>一提</b>、<b>二套</b>、<b>三分組</b>，最後<b>檢查</b>係咪分解到底。</p>
+<p class="tip">👉 <b>驗算</b>：展開返個答案，睇下係咪還原原式。</p></div>
 `;
 
-/* ============ 測驗題目（Exercise 1.1，共 44 題）============ */
 const QUIZ = [
-  { id:1, level:"easy", tag:"提公因式", q:"因式分解： $-12a-18b$",
-    a:"$-6(2a+3b)$",
-    sol:"H.C.F. 為 6，為令括號首項為正，連負號提出 $-6$： $-6(2a+3b)$。",
-    mistake:"抽負數時忘記將第二項變號，錯寫 $-6(2a-3b)$。" },
-
-  { id:2, level:"easy", tag:"提公因式", q:"因式分解： $24s-8rs$",
-    a:"$8s(3-r)$",
-    sol:"數字 H.C.F. 為 8，兩項皆含 $s$，公因式 $8s$： $8s(3-r)$。",
-    mistake:"只抽數字變 $8(3s-rs)$，或只抽變數，未抽最大公因式。" },
-
-  { id:3, level:"easy", tag:"提公因式", q:"因式分解： $-3x^2+15xy$",
-    a:"$-3x(x-5y)$",
-    sol:"公因式 $-3x$，$+15xy \\div (-3x)=-5y$： $-3x(x-5y)$。",
-    mistake:"忘記變號錯寫 $-3x(x+5y)$。可展開驗算。" },
-
-  { id:4, level:"easy", tag:"提公因式", q:"因式分解： $12x-6y+10z$",
-    a:"$2(6x-3y+5z)$",
-    sol:"變數 $x,y,z$ 全不同，只處理係數，H.C.F.=2： $2(6x-3y+5z)$。",
-    mistake:"局部抽取如 $6(2x-y)+10z$，呢個唔係因式分解。" },
-
-  { id:5, level:"easy", tag:"提公因式", q:"因式分解： $20pq+15pr-5p$",
-    a:"$5p(4q+3r-1)$",
-    sol:"H.C.F.=5，共同變數 $p$。最後一項本身係 $5p$，$5p\\div5p=1$： $5p(4q+3r-1)$。",
-    mistake:"抽 $5p$ 後以為最後一項冇咗，錯寫 $5p(4q+3r)$。原本 3 項，括號內都要 3 項！" },
-
-  { id:6, level:"easy", tag:"提公因式(OCR修正)", q:"因式分解： $4m^2-16mn-12m$",
-    a:"$4m(m-4n-3)$",
-    sol:"（原題 OCR 誤將 $m^2$ 認成 $m'$，修正後）H.C.F.=4，共同變數 $m$： $4m(m-4n-3)$。",
-    mistake:"原掃描出現同類項假象，實際係 OCR 錯誤；正確要抽 $4m$。" },
-
-  { id:7, level:"mid", tag:"併項法", q:"因式分解： $pr-5r+pq-5q$",
-    a:"$(p-5)(r+q)$",
-    sol:"前兩項抽 $r$、後兩項抽 $q$： $r(p-5)+q(p-5)=(p-5)(r+q)$。",
-    mistake:"若題目係 $-pq+5q$，抽 $-q$ 時常忘記變號為 $(p-5)$。" },
-
-  { id:8, level:"easy", tag:"併項法(OCR修正)", q:"因式分解： $12b-6+2ab-a$",
-    a:"$(2b-1)(6+a)$",
-    sol:"（原題 OCR 誤植，修正後）前兩項抽 6、後兩項抽 $a$： $6(2b-1)+a(2b-1)=(2b-1)(6+a)$。",
-    mistake:"按錯誤掃描數字 126 計係死胡同；正確原題為 $12b-6+2ab-a$。" },
-
-  { id:9, level:"mid", tag:"併項法(重排)", q:"因式分解： $2ah+9bk+3bh+6ak$",
-    a:"$(h+3k)(2a+3b)$",
-    sol:"重排含 $a$、含 $b$： $2ah+6ak+3bh+9bk=2a(h+3k)+3b(h+3k)=(h+3k)(2a+3b)$。",
-    mistake:"死板只睇前兩項，發現無公因就放棄。4 項式「相鄰無公因，必先重排」。" },
-
-  { id:10, level:"hard", tag:"併項法(重排+負號)", q:"因式分解： $9rs+24-27r-8s$",
-    a:"$(s-3)(9r-8)$",
-    sol:"重排 $=9rs-27r-8s+24=9r(s-3)-8(s-3)=(s-3)(9r-8)$。後兩項要抽 $-8$。",
-    mistake:"處理 $-8s+24$ 錯寫 $-8(s+3)$，無法配對前面 $(s-3)$，全題 0 分。" },
-
-  { id:11, level:"easy", tag:"平方差", q:"因式分解： $a^2-36$",
-    a:"$(a+6)(a-6)$",
-    sol:"$a^2-6^2=(a+6)(a-6)$。",
-    mistake:"混淆平方差同完全平方，錯寫 $(a-6)^2$。" },
-
-  { id:12, level:"easy", tag:"平方差", q:"因式分解： $16m^2-81n^2$",
-    a:"$(4m+9n)(4m-9n)$",
-    sol:"$(4m)^2-(9n)^2=(4m+9n)(4m-9n)$。",
-    mistake:"只對變數開方，錯寫 $(16m+81n)(16m-81n)$；要記住 $16m^2=(4m)^2$。" },
-
-  { id:13, level:"mid", tag:"提公因式+平方差", q:"因式分解： $-12s^2+75$",
-    a:"$-3(2s+5)(2s-5)$",
-    sol:"H.C.F.=3，提 $-3$： $-3(4s^2-25)=-3[(2s)^2-5^2]=-3(2s+5)(2s-5)$。",
-    mistake:"見唔係平方數就放棄；或抽 $-3$ 後忘記變號寫成 $-3(4s^2+25)$。" },
-
-  { id:14, level:"mid", tag:"提公因式+平方差", q:"因式分解： $9a-49ab^2$",
-    a:"$a(3+7b)(3-7b)$",
-    sol:"先抽變數 $a$： $a(9-49b^2)=a[3^2-(7b)^2]=a(3+7b)(3-7b)$。",
-    mistake:"寫到 $a(9-49b^2)$ 就停，未察覺括號內可繼續分解。" },
-
-  { id:15, level:"easy", tag:"完全平方", q:"因式分解： $a^2+8a+16$",
-    a:"$(a+4)^2$",
-    sol:"$a^2+2(a)(4)+4^2=(a+4)^2$。",
-    mistake:"用十字相乘繞遠路；對常見平方數 $1,4,9,16,25$ 要敏感。" },
-
-  { id:16, level:"easy", tag:"完全平方(負號)", q:"因式分解： $x^2-10x+25$",
-    a:"$(x-5)^2$",
-    sol:"$x^2-2(x)(5)+5^2=(x-5)^2$。",
-    mistake:"見尾項 $+25$ 就寫 $(x+5)^2$。括號內加減號由中間項決定！" },
-
-  { id:17, level:"mid", tag:"完全平方(係數>1)", q:"因式分解： $9m^2-6m+1$",
-    a:"$(3m-1)^2$",
-    sol:"$(3m)^2-2(3m)(1)+1^2=(3m-1)^2$。",
-    mistake:"首項錯認為 $9m$，寫成 $(9m-1)^2$；要記 $(3m)^2=9m^2$。" },
-
-  { id:18, level:"mid", tag:"完全平方(雙變數)", q:"因式分解： $x^2+14xy+49y^2$",
-    a:"$(x+7y)^2$",
-    sol:"$x^2+2(x)(7y)+(7y)^2=(x+7y)^2$。",
-    mistake:"太專注數字 $49\\to7$，答案漏咗變數 $y$，錯寫 $(x+7)^2$。" },
-
-  { id:19, level:"hard", tag:"完全平方(雙變數雙係數)", q:"因式分解： $4m^2+36mn+81n^2$",
-    a:"$(2m+9n)^2$",
-    sol:"$(2m)^2+2(2m)(9n)+(9n)^2=(2m+9n)^2$，驗證中間 $2\\times2m\\times9n=36mn$。",
-    mistake:"見 $36mn$ 數字大就亂用十字相乘；先假設完全平方，用 $2AB$ 驗證。" },
-
-  { id:20, level:"hard", tag:"提公因式+完全平方", q:"因式分解： $45c^2-60cd+20d^2$",
-    a:"$5(3c-2d)^2$",
-    sol:"先抽 H.C.F.=5： $5(9c^2-12cd+4d^2)=5[(3c)^2-2(3c)(2d)+(2d)^2]=5(3c-2d)^2$。",
-    mistake:"忘記先抽 5 而卡死；或最後忘記寫返個 5。" },
-
-  { id:21, level:"easy", tag:"提公因式(OCR修正)", q:"因式分解： $9m^2-3m^4$",
-    a:"$3m^2(3-m^2)$",
-    sol:"（原題 OCR 誤認 $m^4$ 為 $m^2$，修正後）H.C.F.=3，最低次方 $m^2$： $3m^2(3-m^2)$。",
-    mistake:"按錯誤掃描 $9m^2-3m^2$ 只係合併同類項，非本節考點。" },
-
-  { id:22, level:"easy", tag:"提公因式+平方差(OCR修正)", q:"因式分解： $p^2q-25q$",
-    a:"$q(p+5)(p-5)$",
-    sol:"（原題 OCR 誤植，修正後）先抽公因式 $q$： $q(p^2-25)=q(p^2-5^2)=q(p+5)(p-5)$。",
-    mistake:"忘記先抽 $q$；抽完後仲要繼續平方差分解。" }
-];
-  ,
-  { id:23, level:"mid", tag:"完全平方", q:"因式分解： $4a^2+4a+1$",
-    a:"$(2a+1)^2$",
-    sol:"$(2a)^2+2(2a)(1)+1^2=(2a+1)^2$。",
-    mistake:"用十字相乘浪費時間；對 $1,4,9,16$ 要有平方式直覺。" },
-
-  { id:24, level:"mid", tag:"提公因式(陷阱題)", q:"因式分解： $x^2+18xy+81x$",
-    a:"$x(x+18y+81)$",
-    sol:"小心！尾項係 $81x$ 唔係 $81y^2$，唔係完全平方。抽公因式 $x$： $x(x+18y+81)$。",
-    mistake:"大腦自動補腦成 $81y^2$，錯寫 $(x+9y)^2$。要細心觀察！" },
-
-  { id:25, level:"hard", tag:"提負公因式+完全平方", q:"因式分解： $-3x^2+24xy-48y^2$",
-    a:"$-3(x-4y)^2$",
-    sol:"H.C.F.=3，提 $-3$（全部變號）： $-3(x^2-8xy+16y^2)=-3(x-4y)^2$。",
-    mistake:"抽 $-3$ 後忘記變號，錯寫 $-3(x^2+8xy-16y^2)$。" },
-
-  { id:26, level:"hard", tag:"併項法(隱藏1)", q:"因式分解： $r-2s-r^2s+2rs^2$",
-    a:"$(r-2s)(1-rs)$",
-    sol:"前兩項一組 $(r-2s)$，後兩項抽 $-rs$： $(r-2s)-rs(r-2s)=(r-2s)(1-rs)$。",
-    mistake:"提出 $(r-2s)$ 後前面「乜都唔剩」，忘記補返個 $1$。" },
-
-  { id:27, level:"hard", tag:"提公因式+平方差", q:"因式分解： $8x^2y-18xy^3$",
-    a:"$2xy(2x+3y)(2x-3y)$",
-    sol:"先抽 $2xy$： $2xy(4x^2-9y^2)=2xy[(2x)^2-(3y)^2]=2xy(2x+3y)(2x-3y)$。",
-    mistake:"做到 $2xy(4x^2-9y^2)$ 就停筆，未再拆平方差。" },
-
-  { id:28, level:"mid", tag:"提公因式(高次方)", q:"因式分解： $15x^3y-25x^2y^2$",
-    a:"$5x^2y(3x-5y)$",
-    sol:"H.C.F.=5，最低次方 $x^2$、$y$，公因式 $5x^2y$： $5x^2y(3x-5y)$。",
-    mistake:"只抽 $5xy$，錯寫 $5xy(3x^2-5xy)$，括號內仲有 $x$ 未抽。" },
-
-  { id:29, level:"hard", tag:"提公因式+完全平方", q:"因式分解： $3m^2n^2+18mn^3+27n^4$",
-    a:"$3n^2(m+3n)^2$",
-    sol:"H.C.F.=3，最低次方 $n^2$，抽 $3n^2$： $3n^2(m^2+6mn+9n^2)=3n^2(m+3n)^2$。",
-    mistake:"抽出 $3n^2$ 後盲目用十字相乘，對完全平方不夠敏感拖慢速度。" },
-
-  { id:30, level:"hard", tag:"提公因式(多變數負號)", q:"因式分解： $-9a^2b^2+36a^3b-27a^2b$",
-    a:"$-9a^2b(b-4a+3)$",
-    sol:"H.C.F.=9，變數 $a^2b$，提 $-9a^2b$（全部變號）： $-9a^2b(b-4a+3)$。（提正數 $9a^2b(-b+4a-3)$ 亦正確）",
-    mistake:"抽 $-9a^2b$ 後忘記將 $+36a^3b$ 變 $-4a$、$-27a^2b$ 變 $+3$。" },
-
-  { id:31, level:"hard", tag:"提負公因式+完全平方", q:"因式分解： $-32x^3y+16x^2y^2-2xy^3$",
-    a:"$-2xy(4x-y)^2$",
-    sol:"H.C.F.=2，變數 $xy$，提 $-2xy$： $-2xy(16x^2-8xy+y^2)=-2xy(4x-y)^2$。",
-    mistake:"忘記變號寫成 $-2xy(16x^2+8xy-y^2)$；或漏抽變數 $y$。" },
-
-  { id:32, level:"hard", tag:"併項法(重排)", q:"因式分解： $16p^3+45q^2-36p^2q^2-20p$",
-    a:"$(4p-9q^2)(4p^2-5)$",
-    sol:"重排 $=16p^3-36p^2q^2-20p+45q^2=4p^2(4p-9q^2)-5(4p-9q^2)=(4p-9q^2)(4p^2-5)$。",
-    mistake:"見前兩項無公因就放棄。「相鄰無公因，必先大重排」。" },
-
-  { id:33, level:"hard", tag:"併項法(六項三三組)", q:"因式分解： $a+4b+9+4ac+16bc+36c$",
-    a:"$(a+4b+9)(1+4c)$",
-    sol:"前三項 $(a+4b+9)$；後三項抽 $4c$： $(a+4b+9)+4c(a+4b+9)=(a+4b+9)(1+4c)$。",
-    mistake:"被六項式嚇怕，或最後漏寫個 $1$，錯寫 $4c(a+4b+9)$。" },
-
-  { id:34, level:"hard", tag:"併項法(六項三三組)", q:"因式分解： $5x^2-15xy-25xz-2x+6y+10z$",
-    a:"$(x-3y-5z)(5x-2)$",
-    sol:"前三項抽 $5x$，後三項抽 $-2$： $5x(x-3y-5z)-2(x-3y-5z)=(x-3y-5z)(5x-2)$。",
-    mistake:"後三項抽 2 忘記負號，寫成 $+2(-x+3y+5z)$，括號正負相反。" },
-
-  { id:35, level:"hard", tag:"提共同括號", q:"因式分解： $a(3a-b)+(a+5)(3a-b)$",
-    a:"$(3a-b)(2a+5)$",
-    sol:"共同括號 $(3a-b)$： $(3a-b)[a+(a+5)]=(3a-b)(2a+5)$。",
-    mistake:"亂展開變 $3a^2-ab+...$，易錯又浪費時間。見相同括號必先抽！" },
-
-  { id:36, level:"hard", tag:"提公因式(符號轉換)", q:"因式分解： $(8x+3y)(5x-6y)-(6y-5x)^2$",
-    a:"$3(5x-6y)(x+3y)$",
-    sol:"$(6y-5x)^2=(5x-6y)^2$，統一後： $(5x-6y)[(8x+3y)-(5x-6y)]=(5x-6y)(3x+9y)=3(5x-6y)(x+3y)$。",
-    mistake:"做到 $(5x-6y)(3x+9y)$ 就停，忘記抽 3；或全部展開陷入苦戰。" },
-
-  { id:37, level:"mid", tag:"平方差(整個括號)", q:"因式分解： $64-(2m-7n)^2$",
-    a:"$(8+2m-7n)(8-2m+7n)$",
-    sol:"$8^2-(2m-7n)^2=[8+(2m-7n)][8-(2m-7n)]=(8+2m-7n)(8-2m+7n)$。",
-    mistake:"最後寫成 $(8-2m-7n)$，忘記減去整個括號時每項都要變號。" },
-
-  { id:38, level:"hard", tag:"平方差+隱藏公因數", q:"因式分解： $(5r-2s)^2-(3r-4s)^2$",
-    a:"$4(4r-3s)(r+s)$",
-    sol:"$=[(5r-2s)+(3r-4s)][(5r-2s)-(3r-4s)]=(8r-6s)(2r+2s)=2(4r-3s)\\cdot2(r+s)=4(4r-3s)(r+s)$。",
-    mistake:"做到 $(8r-6s)(2r+2s)$ 就以為完工，忘記兩個括號各抽 2。" },
-
-  { id:39, level:"mid", tag:"完全平方(整個括號)", q:"因式分解： $(1-x)^2+12(1-x)+36$",
-    a:"$(7-x)^2$",
-    sol:"視 $(1-x)$ 為 $A$： $(1-x)^2+2(1-x)(6)+6^2=[(1-x)+6]^2=(7-x)^2$。",
-    mistake:"看唔出結構就全部展開，極耗時間。" },
-
-  { id:40, level:"hard", tag:"完全平方+平方內抽公因數", q:"因式分解： $(a+3)^2-20a(a+3)+100a^2$",
-    a:"$9(1-3a)^2$",
-    sol:"$(a+3)^2-2(a+3)(10a)+(10a)^2=[(a+3)-10a]^2=(3-9a)^2=[3(1-3a)]^2=9(1-3a)^2$。",
-    mistake:"抽 3 出平方括號時忘記平方，錯寫 $3(1-3a)^2$。抽出嘅數要跟住被平方！" },
-
+  { id:1, level:"easy", tag:"提公因式", q:"因式分解： $-12a-18b$", a:"$-6(2a+3b)$",
+    sol:"H.C.F. 為 6，連負號提出 $-6$： $-6(2a+3b)$。", mistake:"抽負數時忘記變號，錯寫 $-6(2a-3b)$。" },
+  { id:2, level:"easy", tag:"提公因式", q:"因式分解： $24s-8rs$", a:"$8s(3-r)$",
+    sol:"公因式 $8s$： $8s(3-r)$。", mistake:"只抽數字或只抽變數，未抽最大公因式。" },
+  { id:3, level:"easy", tag:"提公因式", q:"因式分解： $-3x^2+15xy$", a:"$-3x(x-5y)$",
+    sol:"公因式 $-3x$： $-3x(x-5y)$。", mistake:"忘記變號錯寫 $-3x(x+5y)$。" },
+  { id:4, level:"easy", tag:"提公因式", q:"因式分解： $12x-6y+10z$", a:"$2(6x-3y+5z)$",
+    sol:"變數全不同，只處理係數 H.C.F.=2。", mistake:"局部抽取如 $6(2x-y)+10z$，唔係因式分解。" },
+  { id:5, level:"easy", tag:"提公因式", q:"因式分解： $20pq+15pr-5p$", a:"$5p(4q+3r-1)$",
+    sol:"$5p\\div5p=1$： $5p(4q+3r-1)$。", mistake:"錯寫 $5p(4q+3r)$。原本 3 項，括號內都要 3 項！" },
+  { id:6, level:"easy", tag:"提公因式(OCR修正)", q:"因式分解： $4m^2-16mn-12m$", a:"$4m(m-4n-3)$",
+    sol:"（OCR 修正後）公因式 $4m$： $4m(m-4n-3)$。", mistake:"原掃描係 OCR 錯誤；正確要抽 $4m$。" },
+  { id:7, level:"mid", tag:"併項法", q:"因式分解： $pr-5r+pq-5q$", a:"$(p-5)(r+q)$",
+    sol:"$r(p-5)+q(p-5)=(p-5)(r+q)$。", mistake:"抽負號時常忘記變號。" },
+  { id:8, level:"easy", tag:"併項法(OCR修正)", q:"因式分解： $12b-6+2ab-a$", a:"$(2b-1)(6+a)$",
+    sol:"（OCR 修正後）$6(2b-1)+a(2b-1)=(2b-1)(6+a)$。", mistake:"錯誤掃描 126 係死胡同。" },
+  { id:9, level:"mid", tag:"併項法(重排)", q:"因式分解： $2ah+9bk+3bh+6ak$", a:"$(h+3k)(2a+3b)$",
+    sol:"重排 $=2a(h+3k)+3b(h+3k)=(h+3k)(2a+3b)$。", mistake:"「相鄰無公因，必先重排」。" },
+  { id:10, level:"hard", tag:"併項法(重排+負號)", q:"因式分解： $9rs+24-27r-8s$", a:"$(s-3)(9r-8)$",
+    sol:"$9r(s-3)-8(s-3)=(s-3)(9r-8)$。", mistake:"$-8s+24$ 錯寫 $-8(s+3)$，全題 0 分。" },
+  { id:11, level:"easy", tag:"平方差", q:"因式分解： $a^2-36$", a:"$(a+6)(a-6)$",
+    sol:"$a^2-6^2=(a+6)(a-6)$。", mistake:"混淆錯寫 $(a-6)^2$。" },
+  { id:12, level:"easy", tag:"平方差", q:"因式分解： $16m^2-81n^2$", a:"$(4m+9n)(4m-9n)$",
+    sol:"$(4m)^2-(9n)^2=(4m+9n)(4m-9n)$。", mistake:"只對變數開方，要記 $16m^2=(4m)^2$。" },
+  { id:13, level:"mid", tag:"提公因式+平方差", q:"因式分解： $-12s^2+75$", a:"$-3(2s+5)(2s-5)$",
+    sol:"$-3(4s^2-25)=-3(2s+5)(2s-5)$。", mistake:"見唔係平方數就放棄；或忘記變號。" },
+  { id:14, level:"mid", tag:"提公因式+平方差", q:"因式分解： $9a-49ab^2$", a:"$a(3+7b)(3-7b)$",
+    sol:"先抽 $a$： $a(9-49b^2)=a(3+7b)(3-7b)$。", mistake:"寫到 $a(9-49b^2)$ 就停。" },
+  { id:15, level:"easy", tag:"完全平方", q:"因式分解： $a^2+8a+16$", a:"$(a+4)^2$",
+    sol:"$a^2+2(a)(4)+4^2=(a+4)^2$。", mistake:"對常見平方數要敏感。" },
+  { id:16, level:"easy", tag:"完全平方(負號)", q:"因式分解： $x^2-10x+25$", a:"$(x-5)^2$",
+    sol:"$x^2-2(x)(5)+5^2=(x-5)^2$。", mistake:"加減號由中間項決定！" },
+  { id:17, level:"mid", tag:"完全平方(係數>1)", q:"因式分解： $9m^2-6m+1$", a:"$(3m-1)^2$",
+    sol:"$(3m)^2-2(3m)(1)+1^2=(3m-1)^2$。", mistake:"要記 $(3m)^2=9m^2$。" },
+  { id:18, level:"mid", tag:"完全平方(雙變數)", q:"因式分解： $x^2+14xy+49y^2$", a:"$(x+7y)^2$",
+    sol:"$x^2+2(x)(7y)+(7y)^2=(x+7y)^2$。", mistake:"答案漏咗變數 $y$。" },
+  { id:19, level:"hard", tag:"完全平方(雙變數雙係數)", q:"因式分解： $4m^2+36mn+81n^2$", a:"$(2m+9n)^2$",
+    sol:"$(2m)^2+2(2m)(9n)+(9n)^2=(2m+9n)^2$。", mistake:"先假設完全平方，用 $2AB$ 驗證。" },
+  { id:20, level:"hard", tag:"提公因式+完全平方", q:"因式分解： $45c^2-60cd+20d^2$", a:"$5(3c-2d)^2$",
+    sol:"先抽 5： $5(9c^2-12cd+4d^2)=5(3c-2d)^2$。", mistake:"忘記先抽 5；或最後忘記寫返 5。" },
+  { id:21, level:"easy", tag:"提公因式(OCR修正)", q:"因式分解： $9m^2-3m^4$", a:"$3m^2(3-m^2)$",
+    sol:"（OCR 修正後）公因式 $3m^2$： $3m^2(3-m^2)$。", mistake:"錯誤掃描 $9m^2-3m^2$ 非本節考點。" },
+  { id:22, level:"easy", tag:"提公因式+平方差(OCR修正)", q:"因式分解： $p^2q-25q$", a:"$q(p+5)(p-5)$",
+    sol:"（OCR 修正後）先抽 $q$： $q(p^2-25)=q(p+5)(p-5)$。", mistake:"忘記先抽 $q$；抽完仲要平方差。" },
+  { id:23, level:"mid", tag:"完全平方", q:"因式分解： $4a^2+4a+1$", a:"$(2a+1)^2$",
+    sol:"$(2a)^2+2(2a)(1)+1^2=(2a+1)^2$。", mistake:"用十字相乘浪費時間。" },
+  { id:24, level:"mid", tag:"提公因式(陷阱題)", q:"因式分解： $x^2+18xy+81x$", a:"$x(x+18y+81)$",
+    sol:"尾項係 $81x$ 唔係 $81y^2$，抽公因式 $x$： $x(x+18y+81)$。", mistake:"自動補腦成 $81y^2$，錯寫 $(x+9y)^2$。" },
+  { id:25, level:"hard", tag:"提負公因式+完全平方", q:"因式分解： $-3x^2+24xy-48y^2$", a:"$-3(x-4y)^2$",
+    sol:"提 $-3$（全變號）： $-3(x^2-8xy+16y^2)=-3(x-4y)^2$。", mistake:"忘記變號寫 $-3(x^2+8xy-16y^2)$。" },
+  { id:26, level:"hard", tag:"併項法(隱藏1)", q:"因式分解： $r-2s-r^2s+2rs^2$", a:"$(r-2s)(1-rs)$",
+    sol:"$(r-2s)-rs(r-2s)=(r-2s)(1-rs)$。", mistake:"忘記補返個 $1$。" },
+  { id:27, level:"hard", tag:"提公因式+平方差", q:"因式分解： $8x^2y-18xy^3$", a:"$2xy(2x+3y)(2x-3y)$",
+    sol:"先抽 $2xy$： $2xy(4x^2-9y^2)=2xy(2x+3y)(2x-3y)$。", mistake:"做到 $2xy(4x^2-9y^2)$ 就停。" },
+  { id:28, level:"mid", tag:"提公因式(高次方)", q:"因式分解： $15x^3y-25x^2y^2$", a:"$5x^2y(3x-5y)$",
+    sol:"公因式 $5x^2y$： $5x^2y(3x-5y)$。", mistake:"只抽 $5xy$，括號內仲有 $x$。" },
+  { id:29, level:"hard", tag:"提公因式+完全平方", q:"因式分解： $3m^2n^2+18mn^3+27n^4$", a:"$3n^2(m+3n)^2$",
+    sol:"抽 $3n^2$： $3n^2(m^2+6mn+9n^2)=3n^2(m+3n)^2$。", mistake:"對完全平方不夠敏感。" },
+  { id:30, level:"hard", tag:"提公因式(多變數負號)", q:"因式分解： $-9a^2b^2+36a^3b-27a^2b$", a:"$-9a^2b(b-4a+3)$",
+    sol:"提 $-9a^2b$（全變號）： $-9a^2b(b-4a+3)$。", mistake:"忘記將各項變號。" },
+  { id:31, level:"hard", tag:"提負公因式+完全平方", q:"因式分解： $-32x^3y+16x^2y^2-2xy^3$", a:"$-2xy(4x-y)^2$",
+    sol:"提 $-2xy$： $-2xy(16x^2-8xy+y^2)=-2xy(4x-y)^2$。", mistake:"忘記變號；或漏抽變數 $y$。" },
+  { id:32, level:"hard", tag:"併項法(重排)", q:"因式分解： $16p^3+45q^2-36p^2q^2-20p$", a:"$(4p-9q^2)(4p^2-5)$",
+    sol:"重排 $=4p^2(4p-9q^2)-5(4p-9q^2)=(4p-9q^2)(4p^2-5)$。", mistake:"「相鄰無公因，必先大重排」。" },
+  { id:33, level:"hard", tag:"併項法(六項三三組)", q:"因式分解： $a+4b+9+4ac+16bc+36c$", a:"$(a+4b+9)(1+4c)$",
+    sol:"$(a+4b+9)+4c(a+4b+9)=(a+4b+9)(1+4c)$。", mistake:"最後漏寫個 $1$。" },
+  { id:34, level:"hard", tag:"併項法(六項三三組)", q:"因式分解： $5x^2-15xy-25xz-2x+6y+10z$", a:"$(x-3y-5z)(5x-2)$",
+    sol:"$5x(x-3y-5z)-2(x-3y-5z)=(x-3y-5z)(5x-2)$。", mistake:"後三項抽 2 忘記負號。" },
+  { id:35, level:"hard", tag:"提共同括號", q:"因式分解： $a(3a-b)+(a+5)(3a-b)$", a:"$(3a-b)(2a+5)$",
+    sol:"$(3a-b)[a+(a+5)]=(3a-b)(2a+5)$。", mistake:"見相同括號必先抽，唔好亂展開！" },
+  { id:36, level:"hard", tag:"提公因式(符號轉換)", q:"因式分解： $(8x+3y)(5x-6y)-(6y-5x)^2$", a:"$3(5x-6y)(x+3y)$",
+    sol:"$(6y-5x)^2=(5x-6y)^2$： $(5x-6y)(3x+9y)=3(5x-6y)(x+3y)$。", mistake:"忘記抽 3；或全部展開。" },
+  { id:37, level:"mid", tag:"平方差(整個括號)", q:"因式分解： $64-(2m-7n)^2$", a:"$(8+2m-7n)(8-2m+7n)$",
+    sol:"$8^2-(2m-7n)^2=(8+2m-7n)(8-2m+7n)$。", mistake:"減去整個括號時每項都要變號。" },
+  { id:38, level:"hard", tag:"平方差+隱藏公因數", q:"因式分解： $(5r-2s)^2-(3r-4s)^2$", a:"$4(4r-3s)(r+s)$",
+    sol:"$=(8r-6s)(2r+2s)=4(4r-3s)(r+s)$。", mistake:"忘記兩個括號各抽 2。" },
+  { id:39, level:"mid", tag:"完全平方(整個括號)", q:"因式分解： $(1-x)^2+12(1-x)+36$", a:"$(7-x)^2$",
+    sol:"視 $(1-x)$ 為 $A$： $[(1-x)+6]^2=(7-x)^2$。", mistake:"看唔出結構就全部展開，極耗時間。" },
+  { id:40, level:"hard", tag:"完全平方+平方內抽公因數", q:"因式分解： $(a+3)^2-20a(a+3)+100a^2$", a:"$9(1-3a)^2$",
+    sol:"$[(a+3)-10a]^2=(3-9a)^2=9(1-3a)^2$。", mistake:"抽出嘅數要跟住被平方！" },
   { id:41, level:"hard", tag:"完全平方+連鎖題(a)(b)",
-    q:"(a) $x^2+10xy+25y^2$&nbsp;&nbsp;(b) $x^2+10xy+25y^2+3x+15y$",
-    a:"(a) $(x+5y)^2$&nbsp;&nbsp;(b) $(x+5y)(x+5y+3)$",
-    sol:"(a) $x^2+2(x)(5y)+(5y)^2=(x+5y)^2$。<br>(b) 用 (a) 結果： $(x+5y)^2+3(x+5y)=(x+5y)(x+5y+3)$。",
-    mistake:"(b) 部無留意前三項就係 (a)，重新做十字相乘，浪費時間又易錯。" },
-
+    q:"(a) $x^2+10xy+25y^2$ (b) $x^2+10xy+25y^2+3x+15y$",
+    a:"(a) $(x+5y)^2$ (b) $(x+5y)(x+5y+3)$",
+    sol:"(a) $=(x+5y)^2$。 (b) 用 (a)： $(x+5y)^2+3(x+5y)=(x+5y)(x+5y+3)$。",
+    mistake:"(b) 部要用 (a) 結果，唔好重新做。" },
   { id:42, level:"hard", tag:"平方差+連鎖題(a)(b)",
-    q:"(a) $4m^2-49n^2$&nbsp;&nbsp;(b) $4m^2-49n^2-4m+14n$",
-    a:"(a) $(2m+7n)(2m-7n)$&nbsp;&nbsp;(b) $(2m-7n)(2m+7n-2)$",
-    sol:"(a) $(2m)^2-(7n)^2=(2m+7n)(2m-7n)$。<br>(b) 用 (a)，後兩項抽 $-2$： $(2m+7n)(2m-7n)-2(2m-7n)=(2m-7n)(2m+7n-2)$。",
-    mistake:"(b) 處理 $-4m+14n$ 錯抽 $-2(2m+7n)$，無法配對 $(2m-7n)$。" },
-
-  { id:43, level:"hard", tag:"併項法+平方差", q:"因式分解： $u^2-v^2-4u+4v$",
-    a:"$(u-v)(u+v-4)$",
-    sol:"前兩項平方差、後兩項抽 $-4$： $(u+v)(u-v)-4(u-v)=(u-v)(u+v-4)$。",
-    mistake:"錯誤分組如 $(u^2-4u)-(v^2-4v)$ 無法繼續。見平方減平方多數綁埋做平方差。" },
-
-  { id:44, level:"hard", tag:"隱藏完全平方+平方差", q:"因式分解： $64p^2-9q^2+12q-4$",
-    a:"$(8p+3q-2)(8p-3q+2)$",
-    sol:"「一三分組」： $64p^2-(9q^2-12q+4)=(8p)^2-(3q-2)^2=[8p+(3q-2)][8p-(3q-2)]=(8p+3q-2)(8p-3q+2)$。",
-    mistake:"死板用二二分組做唔到；或抽負號時忘記變號（雙重陷阱）。" }
+    q:"(a) $4m^2-49n^2$ (b) $4m^2-49n^2-4m+14n$",
+    a:"(a) $(2m+7n)(2m-7n)$ (b) $(2m-7n)(2m+7n-2)$",
+    sol:"(a) $=(2m+7n)(2m-7n)$。 (b) 後兩項抽 $-2$： $(2m-7n)(2m+7n-2)$。",
+    mistake:"(b) 處理 $-4m+14n$ 要抽 $-2$。" },
+  { id:43, level:"hard", tag:"併項法+平方差", q:"因式分解： $u^2-v^2-4u+4v$", a:"$(u-v)(u+v-4)$",
+    sol:"$(u+v)(u-v)-4(u-v)=(u-v)(u+v-4)$。", mistake:"見平方減平方多數綁埋做平方差。" },
+  { id:44, level:"hard", tag:"隱藏完全平方+平方差", q:"因式分解： $64p^2-9q^2+12q-4$", a:"$(8p+3q-2)(8p-3q+2)$",
+    sol:"「一三分組」： $(8p)^2-(3q-2)^2=(8p+3q-2)(8p-3q+2)$。", mistake:"死板用二二分組；或抽負號忘記變號。" }
 ];
 
-/* ============ 狀態與 SRS 複習系統 ============ */
 const SKEY = "dse_ch11_srs";
 let CUR = "notes";
-
-function loadSRS(){
-  try { return JSON.parse(localStorage.getItem(SKEY)) || {}; }
-  catch(e){ return {}; }
-}
+function loadSRS(){ try { return JSON.parse(localStorage.getItem(SKEY)) || {}; } catch(e){ return {}; } }
 function saveSRS(d){ localStorage.setItem(SKEY, JSON.stringify(d)); }
-
-/* 評分更新間隔（簡化 SM-2） */
 function rate(id, quality){
-  const srs = loadSRS();
-  const now = Date.now();
+  const srs = loadSRS(); const now = Date.now();
   let card = srs[id] || { ease:2.5, interval:0, reps:0, due:now };
-  if (quality < 3){
-    card.reps = 0; card.interval = 1;
-  } else {
+  if (quality < 3){ card.reps = 0; card.interval = 1; }
+  else {
     card.reps += 1;
     if (card.reps === 1) card.interval = 1;
     else if (card.reps === 2) card.interval = 3;
     else card.interval = Math.round(card.interval * card.ease);
     card.ease = Math.max(1.3, card.ease + (0.1 - (5-quality)*(0.08 + (5-quality)*0.02)));
   }
-  card.due = now + card.interval * 24 * 60 * 60 * 1000;
-  srs[id] = card;
-  saveSRS(srs);
-  renderView(CUR);
+  card.due = now + card.interval * 86400000;
+  srs[id] = card; saveSRS(srs); renderView(CUR);
 }
-
-function dueList(){
-  const srs = loadSRS(); const now = Date.now();
-  return QUIZ.filter(q => { const c = srs[q.id]; return c && c.due <= now; });
-}
-function progress(){
-  const srs = loadSRS();
+function dueList(){ const srs = loadSRS(); const now = Date.now();
+  return QUIZ.filter(q => { const c = srs[q.id]; return c && c.due <= now; }); }
+function progress(){ const srs = loadSRS();
   const learned = QUIZ.filter(q => srs[q.id] && srs[q.id].reps > 0).length;
-  return { learned, total: QUIZ.length };
-}
+  return { learned, total: QUIZ.length }; }
 
-/* ============ 答案顯示切換 ============ */
 function tgAns(btn){
   const ans = btn.parentElement.querySelector(".answer") || btn.nextElementSibling;
   if (!ans) return;
   const show = ans.style.display === "none" || ans.style.display === "";
   ans.style.display = show ? "block" : "none";
-  if (btn.textContent.indexOf("解答") >= 0)
-    btn.textContent = show ? "隱藏解答" : "顯示解答";
-  else
-    btn.textContent = show ? "隱藏答案" : "顯示答案";
+  if (btn.textContent.indexOf("解答") >= 0) btn.textContent = show ? "隱藏解答" : "顯示解答";
+  else btn.textContent = show ? "隱藏答案" : "顯示答案";
 }
 
-/* ============ 測驗卡片 HTML ============ */
 function quizCard(q){
   const levelName = { easy:"淺", mid:"中", hard:"深" }[q.level] || q.level;
   return `
@@ -677,33 +382,25 @@ function quizCard(q){
       <p class="mistake"><b>易錯：</b>${q.mistake}</p>
       <div class="rate-row">
         <span class="muted">掌握程度：</span>
-        <button class="rate-btn r-bad"  onclick="rate(${q.id},1)">😵 唔識</button>
-        <button class="rate-btn r-mid"  onclick="rate(${q.id},3)">🤔 一般</button>
+        <button class="rate-btn r-bad" onclick="rate(${q.id},1)">😵 唔識</button>
+        <button class="rate-btn r-mid" onclick="rate(${q.id},3)">🤔 一般</button>
         <button class="rate-btn r-good" onclick="rate(${q.id},5)">😎 熟練</button>
       </div>
     </div>
   </div>`;
 }
 
-/* ============ 各頁面渲染 ============ */
 function viewQuiz(){
   const p = progress();
   const pct = p.total ? Math.round(p.learned / p.total * 100) : 0;
-  const head = `
-    <div class="card">
-      <h2>🎯 測驗 — Exercise 1.1（共 ${p.total} 題）</h2>
-      <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
-      <p class="muted">已練習 ${p.learned} / ${p.total} 題（${pct}%）</p>
-    </div>`;
+  const head = `<div class="card"><h2>🎯 測驗 — Exercise 1.1（共 ${p.total} 題）</h2>
+    <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+    <p class="muted">已練習 ${p.learned} / ${p.total} 題（${pct}%）</p></div>`;
   return head + QUIZ.map(quizCard).join("");
 }
 function viewReview(){
   const due = dueList();
-  const head = `
-    <div class="card">
-      <h2>📅 今日複習</h2>
-      <p class="muted">根據你嘅評分，以下題目今日需要複習。</p>
-    </div>`;
+  const head = `<div class="card"><h2>📅 今日複習</h2><p class="muted">根據你嘅評分，以下題目今日需要複習。</p></div>`;
   if (due.length === 0)
     return head + `<div class="card"><p class="tip">🎉 太好喇！今日冇需要複習嘅題目。去「測驗」練多啲啦！</p></div>`;
   return head + due.map(quizCard).join("");
@@ -714,25 +411,23 @@ function renderView(view){
   const main = document.getElementById("content");
   let html = "";
   switch(view){
-    case "notes":    html = NOTES; break;
+    case "notes": html = NOTES; break;
     case "examples": html = EXAMPLES; break;
     case "practice": html = PRACTICE; break;
-    case "formula":  html = FORMULA; break;
-    case "quiz":     html = viewQuiz(); break;
-    case "review":   html = viewReview(); break;
-    default:         html = NOTES;
+    case "formula": html = FORMULA; break;
+    case "quiz": html = viewQuiz(); break;
+    case "review": html = viewReview(); break;
+    default: html = NOTES;
   }
   main.innerHTML = html;
   document.querySelectorAll(".menu-item").forEach(el=>{
     el.classList.toggle("active", el.dataset.view === view);
   });
-  if (window.MathJax && MathJax.typesetPromise)
-    MathJax.typesetPromise([main]).catch(()=>{});
+  if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([main]).catch(()=>{});
   closeMenu();
   window.scrollTo(0,0);
 }
 
-/* ============ 側邊欄 / 選單 ============ */
 function openMenu(){
   document.getElementById("sidebar").classList.add("open");
   document.getElementById("overlay").classList.add("show");
@@ -741,15 +436,12 @@ function closeMenu(){
   document.getElementById("sidebar").classList.remove("open");
   document.getElementById("overlay").classList.remove("show");
 }
-
-/* ============ 語言切換（只切 UI 高亮，內容保持繁體）============ */
 function setL(lang){
   document.querySelectorAll(".lang-btn").forEach(b=>{
     b.classList.toggle("active", b.dataset.lang === lang);
   });
 }
 
-/* ============ 綁定事件 + 啟動 ============ */
 window.addEventListener("load", function(){
   document.querySelectorAll(".menu-item").forEach(el=>{
     el.addEventListener("click", ()=> renderView(el.dataset.view));
